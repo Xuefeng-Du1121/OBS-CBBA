@@ -1,0 +1,19 @@
+{
+  "source": "HYCOM",
+  "dataset_version": "GOFS 3.1 GLBy0.08/expt_93.0",
+  "url": "https://ncss.hycom.org/thredds/ncss/GLBy0.08/expt_93.0?var=water_u&var=water_v&north=30.124966080295934&south=29.875033919704066&west=299.7880776428735&east=300.2119223571265&horizStride=1&time_start=2023-07-01T00%3A00%3A00Z&time_end=2023-07-01T03%3A00%3A00Z&timeStride=1&vertCoord=0&accept=netcdf&addLatLon=true",
+  "dataset_url": "https://www.hycom.org/dataserver/gofs-3pt1/analysis",
+  "license": "DoD DISTRIBUTION A. Approved for Public Release; Distribution Unlimited.",
+  "license_url": "https://www.hycom.org/dataserver",
+  "retrieved_utc": "2026-10-25T02:45:29.861900+00:00",
+  "sha256": "b25f47d7afd8c5b6371906c9140a209f56123b049c61d07c5aa8be8b4c34d39b",
+  "size_bytes": 3368,
+  "resolution": {
+    "longitude_degrees": 0.08,
+    "latitude_degrees": 0.04,
+    "time_hours": 3
+  },
+  "depth_m": 0,
+  "units": "m/s",
+  "registration_required": false
+}

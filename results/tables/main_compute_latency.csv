@@ -1,0 +1,12 @@
+arm,scenes,episodes,decision_latency_seconds,scheduler_seconds_per_episode,archived_cost_decision_seconds,scope
+a,360,360,0.00531809374734035,0.531809374734035,,single-core scheduler; 100 allocation ticks; excludes physics/I/O
+b,360,360,0.007017001883476043,0.7017001883476043,,single-core scheduler; 100 allocation ticks; excludes physics/I/O
+regret-b,360,360,0.009875847025192341,0.9875847025192341,,single-core scheduler; 100 allocation ticks; excludes physics/I/O
+f,360,360,0.010058542476850561,1.005854247685056,,single-core scheduler; 100 allocation ticks; excludes physics/I/O
+cbba,360,360,0.007418055942152731,0.741805594215273,0.7407282255305391,single-core scheduler; 100 allocation ticks; excludes physics/I/O
+cbba-pr,360,360,0.014581198858123067,1.4581198858123068,1.4570496510242164,single-core scheduler; 100 allocation ticks; excludes physics/I/O
+msa,360,360,0.0755278256683507,7.55278256683507,7.551497974113509,single-core scheduler; 100 allocation ticks; excludes physics/I/O
+o_obs,360,360,3.2623301744684774,326.2330174468477,325.39100541740896,single-core scheduler; 100 allocation ticks; excludes physics/I/O
+o_obs-cbba,360,360,9.065256038132834,906.5256038132834,905.0767559805253,single-core scheduler; 100 allocation ticks; excludes physics/I/O
+p5-dhgc,360,1080,0.008473360762547665,0.8473360762547665,0.8473360762547667,single-core scheduler; 100 allocation ticks; excludes physics/I/O
+p5-mappo,360,1080,0.0037947901167898197,0.37947901167898196,0.37947901167898196,single-core scheduler; 100 allocation ticks; excludes physics/I/O

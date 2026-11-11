@@ -1,0 +1,13 @@
+cell,panel,lat,lon,start,scenes,mean_diff_pp,sd_pp,label
+hycom_u4,0,26,-68,2023-01-01,10,3.246269873271911,2.821304348259452,descriptive per-panel mean (no per-panel inference)
+hycom_u4,1,26,-68,2023-07-01,10,3.2318069799393343,2.7121104626186887,descriptive per-panel mean (no per-panel inference)
+hycom_u4,2,30,-60,2023-01-01,10,4.298147903845306,2.470614996226972,descriptive per-panel mean (no per-panel inference)
+hycom_u4,3,30,-60,2023-07-01,10,4.028998681615404,2.460389288276365,descriptive per-panel mean (no per-panel inference)
+hycom_u4,4,35,-50,2023-01-01,10,3.635845260143339,1.9843663953850996,descriptive per-panel mean (no per-panel inference)
+hycom_u4,5,35,-50,2023-07-01,10,3.0662743040176257,3.2626642310326965,descriptive per-panel mean (no per-panel inference)
+hycom_u6,0,26,-68,2023-01-01,10,7.5606599703168245,3.6853181858743564,descriptive per-panel mean (no per-panel inference)
+hycom_u6,1,26,-68,2023-07-01,10,6.504810070477494,1.2720519811154598,descriptive per-panel mean (no per-panel inference)
+hycom_u6,2,30,-60,2023-01-01,10,5.846608171230669,3.5336844180494524,descriptive per-panel mean (no per-panel inference)
+hycom_u6,3,30,-60,2023-07-01,10,6.544267393735575,3.104766006486506,descriptive per-panel mean (no per-panel inference)
+hycom_u6,4,35,-50,2023-01-01,10,6.0676166880250815,3.244777584869445,descriptive per-panel mean (no per-panel inference)
+hycom_u6,5,35,-50,2023-07-01,10,6.840527025772261,2.8699586809257696,descriptive per-panel mean (no per-panel inference)

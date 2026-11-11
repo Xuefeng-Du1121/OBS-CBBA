@@ -1,0 +1,33 @@
+contrast,domain,predictors,term,estimate,se,n,r2
+o_obs-cbba minus cbba-pr,area1000,"log(nominal vehicle/current speed ratio), expected tasks per UAV (N/6), interaction",intercept,-1.4343812742844402,2.654347602886486,90,0.039499239314457646
+o_obs-cbba minus cbba-pr,area1000,"log(nominal vehicle/current speed ratio), expected tasks per UAV (N/6), interaction",log_ratio,1.2742044747543937,0.9865477434611862,90,0.039499239314457646
+o_obs-cbba minus cbba-pr,area1000,"log(nominal vehicle/current speed ratio), expected tasks per UAV (N/6), interaction",tasks_per_uav,0.07774460053222018,0.11959522971778745,90,0.039499239314457646
+o_obs-cbba minus cbba-pr,area1000,"log(nominal vehicle/current speed ratio), expected tasks per UAV (N/6), interaction",log_ratio_x_tasks_per_uav,-0.03587218602589629,0.04445024603352644,90,0.039499239314457646
+o_obs-cbba minus cbba-pr,area10000,"log(nominal vehicle/current speed ratio), expected tasks per UAV (N/6), interaction",intercept,-4.500538395175351,0.9458533396990862,90,0.7662270982450177
+o_obs-cbba minus cbba-pr,area10000,"log(nominal vehicle/current speed ratio), expected tasks per UAV (N/6), interaction",log_ratio,3.8142394728661233,0.35154758062230557,90,0.7662270982450177
+o_obs-cbba minus cbba-pr,area10000,"log(nominal vehicle/current speed ratio), expected tasks per UAV (N/6), interaction",tasks_per_uav,0.1313659891888964,0.042616704503071166,90,0.7662270982450177
+o_obs-cbba minus cbba-pr,area10000,"log(nominal vehicle/current speed ratio), expected tasks per UAV (N/6), interaction",log_ratio_x_tasks_per_uav,-0.10504547114658697,0.015839452834111357,90,0.7662270982450177
+b_fc minus b,area1000,"log(nominal vehicle/current speed ratio), expected tasks per UAV (N/6), interaction",intercept,-2.4945128078922703,1.3549102852110178,90,0.04947996293899648
+b_fc minus b,area1000,"log(nominal vehicle/current speed ratio), expected tasks per UAV (N/6), interaction",log_ratio,1.0587014808616315,0.5035827572145024,90,0.04947996293899648
+b_fc minus b,area1000,"log(nominal vehicle/current speed ratio), expected tasks per UAV (N/6), interaction",tasks_per_uav,0.0990172636262387,0.0610473197370956,90,0.04947996293899648
+b_fc minus b,area1000,"log(nominal vehicle/current speed ratio), expected tasks per UAV (N/6), interaction",log_ratio_x_tasks_per_uav,-0.04370190763188438,0.022689603827882973,90,0.04947996293899648
+b_fc minus b,area10000,"log(nominal vehicle/current speed ratio), expected tasks per UAV (N/6), interaction",intercept,0.8226057548987801,1.5645549525357432,90,0.1564967896003806
+b_fc minus b,area10000,"log(nominal vehicle/current speed ratio), expected tasks per UAV (N/6), interaction",log_ratio,-1.0474234424393887,0.581501893823802,90,0.1564967896003806
+b_fc minus b,area10000,"log(nominal vehicle/current speed ratio), expected tasks per UAV (N/6), interaction",tasks_per_uav,-0.0010477676722572599,0.07049314443637178,90,0.1564967896003806
+b_fc minus b,area10000,"log(nominal vehicle/current speed ratio), expected tasks per UAV (N/6), interaction",log_ratio_x_tasks_per_uav,0.017205505139084476,0.02620035616192811,90,0.1564967896003806
+o_obs-cbba minus cbba-pr,area1000,"log(realized interior drift-RMS ratio), expected tasks per UAV, interaction",intercept,-1.3980145228131255,2.6333473781408774,90,0.039410005763780065
+o_obs-cbba minus cbba-pr,area1000,"log(realized interior drift-RMS ratio), expected tasks per UAV, interaction",log_realized_ratio,1.2729416278726302,0.9869812296943781,90,0.039410005763780065
+o_obs-cbba minus cbba-pr,area1000,"log(realized interior drift-RMS ratio), expected tasks per UAV, interaction",tasks_per_uav,0.07669654810170957,0.11863411593819866,90,0.039410005763780065
+o_obs-cbba minus cbba-pr,area1000,"log(realized interior drift-RMS ratio), expected tasks per UAV, interaction",log_realized_ratio_x_tasks_per_uav,-0.03582586211039005,0.044462344358803196,90,0.039410005763780065
+o_obs-cbba minus cbba-pr,area10000,"log(realized interior drift-RMS ratio), expected tasks per UAV, interaction",intercept,-4.397170477942848,0.9379094359683647,90,0.7662414049108914
+o_obs-cbba minus cbba-pr,area10000,"log(realized interior drift-RMS ratio), expected tasks per UAV, interaction",log_realized_ratio,3.814204504341185,0.3515592370163722,90,0.7662414049108914
+o_obs-cbba minus cbba-pr,area10000,"log(realized interior drift-RMS ratio), expected tasks per UAV, interaction",tasks_per_uav,0.12851182542019143,0.042262192646663775,90,0.7662414049108914
+o_obs-cbba minus cbba-pr,area10000,"log(realized interior drift-RMS ratio), expected tasks per UAV, interaction",log_realized_ratio_x_tasks_per_uav,-0.10504194936393703,0.015841320340313374,90,0.7662414049108914
+b_fc minus b,area1000,"log(realized interior drift-RMS ratio), expected tasks per UAV, interaction",intercept,-2.467455262690658,1.3441366059991737,90,0.049468210564908244
+b_fc minus b,area1000,"log(realized interior drift-RMS ratio), expected tasks per UAV, interaction",log_realized_ratio,1.0590851434013575,0.5037837435647735,90,0.049468210564908244
+b_fc minus b,area1000,"log(realized interior drift-RMS ratio), expected tasks per UAV, interaction",tasks_per_uav,0.09791179414295681,0.06055428132138825,90,0.049468210564908244
+b_fc minus b,area1000,"log(realized interior drift-RMS ratio), expected tasks per UAV, interaction",log_realized_ratio_x_tasks_per_uav,-0.04372316949464478,0.022694865530198595,90,0.049468210564908244
+b_fc minus b,area10000,"log(realized interior drift-RMS ratio), expected tasks per UAV, interaction",intercept,0.7949955169019415,1.5514511956654755,90,0.15650881723249976
+b_fc minus b,area10000,"log(realized interior drift-RMS ratio), expected tasks per UAV, interaction",log_realized_ratio,-1.0478032063032532,0.5815348238320635,90,0.15650881723249976
+b_fc minus b,area10000,"log(realized interior drift-RMS ratio), expected tasks per UAV, interaction",tasks_per_uav,-0.0006108673233720313,0.06990838006167874,90,0.15650881723249976
+b_fc minus b,area10000,"log(realized interior drift-RMS ratio), expected tasks per UAV, interaction",log_realized_ratio_x_tasks_per_uav,0.017221197460202883,0.026204060264650084,90,0.15650881723249976
