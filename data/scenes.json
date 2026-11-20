@@ -1,0 +1,1349 @@
+{
+ "description": "Scene table: every scene is generated from its seed and configuration. Configuration = base_config with the overrides of its group.",
+ "base_config": {
+  "tasks": 50,
+  "uavs": 4,
+  "speed": 0.05,
+  "energy": 100.0,
+  "sensing_energy": 1.0,
+  "sensing_steps": 1,
+  "initial_window": 50,
+  "arrival_window": 20,
+  "sigma": 0.0,
+  "grid": 5,
+  "history": 20,
+  "dim": 128,
+  "layers": 3,
+  "lr": 0.0001,
+  "batch_size": 512,
+  "beta": 1.0,
+  "response_threshold": 0.7,
+  "allocation_weight": 0.6,
+  "pretrain_epochs": 60,
+  "joint_epochs": 40,
+  "transitions_per_epoch": 1280000,
+  "upper_clip": 3.0,
+  "lower_clip": 1.0,
+  "upper_decay": 0.995,
+  "horizon": 100,
+  "arrival_until": 60,
+  "arrival": "medium",
+  "return_steps": 30,
+  "flight_energy": 10.0,
+  "hover_energy": 0.02,
+  "reserve": 10.0,
+  "max_distance": 8.0,
+  "sensing_radius": 0.01,
+  "separation": 0.002,
+  "depot_radius": 0.015,
+  "observation_delay": 0,
+  "loss": 0.0,
+  "nominal_speed": 0.0,
+  "mobility": "maritime-current",
+  "maritime": {
+   "area_m": 10000.0,
+   "dt_seconds": 25.0,
+   "current_mps": [
+    0.3,
+    0.0
+   ],
+   "shear_mps": 0.0,
+   "current_modulation": 0.0,
+   "current_period_seconds": 7200.0,
+   "windage": 0.02,
+   "wind_stages": [
+    [
+     0,
+     5.0,
+     -5.0
+    ],
+    [
+     25,
+     -5.0,
+     5.0
+    ],
+    [
+     50,
+     5.0,
+     0.0
+    ],
+    [
+     75,
+     0.0,
+     0.0
+    ]
+   ],
+   "residual_mps": 0.05,
+   "anchor_radius_m": 100.0
+  },
+  "rho": 0.2,
+  "prior_cost": 0.0,
+  "region_budget": 5,
+  "heads": 4,
+  "gamma": 0.99,
+  "entropy": 0.01,
+  "distance_weight": 0.1,
+  "target_tau": 0.01,
+  "replay_size": 50000,
+  "replay_alpha": 0.6,
+  "replay_importance": 0.4,
+  "update_every": 512,
+  "deviation_scale": 0.02,
+  "delay_scale": 20.0,
+  "reward_energy": 0.1,
+  "reward_delay": 0.2,
+  "reward_conflict": 0.2,
+  "reward_length": 1.0,
+  "reward_deviation": 0.2,
+  "reward_failure": 1.0,
+  "reward_value": 1.0,
+  "reward_success": 1.0,
+  "reward_protocol": "event-components-v1",
+  "validation_instances": 5,
+  "response_aux_weight": 0.0,
+  "upper_advantage_normalize": false,
+  "rollout_batching": false,
+  "response_gate_mode": "bernoulli",
+  "response_gate_temperature": 0.25,
+  "regional_cost_mode": "fixed-reference",
+  "regional_calibration": null,
+  "switching_protocol": "restart-service-v1",
+  "task_order": "deadline",
+  "arrival_process": "poisson"
+ },
+ "cells": [
+  {
+   "module": "ablations",
+   "cell": "medium",
+   "groups": [
+    {
+     "seeds": [
+      31400,
+      31419
+     ],
+     "overrides": {
+      "tasks": 90,
+      "uavs": 6
+     }
+    }
+   ]
+  },
+  {
+   "module": "ablations",
+   "cell": "high",
+   "groups": [
+    {
+     "seeds": [
+      31420,
+      31439
+     ],
+     "overrides": {
+      "tasks": 60,
+      "uavs": 6,
+      "arrival": "high"
+     }
+    }
+   ]
+  },
+  {
+   "module": "availability",
+   "cell": "0",
+   "groups": [
+    {
+     "seeds": [
+      31460,
+      31469
+     ],
+     "overrides": {
+      "tasks": 60,
+      "uavs": 6,
+      "arrival": "high"
+     }
+    }
+   ]
+  },
+  {
+   "module": "availability",
+   "cell": "1",
+   "groups": [
+    {
+     "seeds": [
+      31470,
+      31479
+     ],
+     "overrides": {
+      "tasks": 60,
+      "uavs": 6,
+      "arrival": "high",
+      "loss": 0.1
+     }
+    }
+   ]
+  },
+  {
+   "module": "availability",
+   "cell": "2",
+   "groups": [
+    {
+     "seeds": [
+      31480,
+      31489
+     ],
+     "overrides": {
+      "tasks": 60,
+      "uavs": 6,
+      "arrival": "high",
+      "loss": 0.3
+     }
+    }
+   ]
+  },
+  {
+   "module": "analysis",
+   "cell": "area1000_v0.6_n80",
+   "groups": [
+    {
+     "seeds": [
+      31700,
+      31709
+     ],
+     "overrides": {
+      "uavs": 6,
+      "speed": 0.015,
+      "maritime": {
+       "area_m": 1000.0,
+       "dt_seconds": 25.0,
+       "current_mps": [
+        0.3,
+        0.0
+       ],
+       "shear_mps": 0.0,
+       "current_modulation": 0.0,
+       "current_period_seconds": 7200.0,
+       "windage": 0.02,
+       "wind_stages": [
+        [
+         0,
+         5.0,
+         -5.0
+        ],
+        [
+         25,
+         -5.0,
+         5.0
+        ],
+        [
+         50,
+         5.0,
+         0.0
+        ],
+        [
+         75,
+         0.0,
+         0.0
+        ]
+       ],
+       "residual_mps": 0.05,
+       "anchor_radius_m": 100.0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "module": "analysis",
+   "cell": "area1000_v0.6_n120",
+   "groups": [
+    {
+     "seeds": [
+      31710,
+      31719
+     ],
+     "overrides": {
+      "tasks": 90,
+      "uavs": 6,
+      "speed": 0.015,
+      "maritime": {
+       "area_m": 1000.0,
+       "dt_seconds": 25.0,
+       "current_mps": [
+        0.3,
+        0.0
+       ],
+       "shear_mps": 0.0,
+       "current_modulation": 0.0,
+       "current_period_seconds": 7200.0,
+       "windage": 0.02,
+       "wind_stages": [
+        [
+         0,
+         5.0,
+         -5.0
+        ],
+        [
+         25,
+         -5.0,
+         5.0
+        ],
+        [
+         50,
+         5.0,
+         0.0
+        ],
+        [
+         75,
+         0.0,
+         0.0
+        ]
+       ],
+       "residual_mps": 0.05,
+       "anchor_radius_m": 100.0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "module": "analysis",
+   "cell": "area1000_v0.6_n180",
+   "groups": [
+    {
+     "seeds": [
+      31720,
+      31729
+     ],
+     "overrides": {
+      "tasks": 150,
+      "uavs": 6,
+      "speed": 0.015,
+      "maritime": {
+       "area_m": 1000.0,
+       "dt_seconds": 25.0,
+       "current_mps": [
+        0.3,
+        0.0
+       ],
+       "shear_mps": 0.0,
+       "current_modulation": 0.0,
+       "current_period_seconds": 7200.0,
+       "windage": 0.02,
+       "wind_stages": [
+        [
+         0,
+         5.0,
+         -5.0
+        ],
+        [
+         25,
+         -5.0,
+         5.0
+        ],
+        [
+         50,
+         5.0,
+         0.0
+        ],
+        [
+         75,
+         0.0,
+         0.0
+        ]
+       ],
+       "residual_mps": 0.05,
+       "anchor_radius_m": 100.0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "module": "analysis",
+   "cell": "area1000_v2.0_n80",
+   "groups": [
+    {
+     "seeds": [
+      31730,
+      31739
+     ],
+     "overrides": {
+      "uavs": 6,
+      "maritime": {
+       "area_m": 1000.0,
+       "dt_seconds": 25.0,
+       "current_mps": [
+        0.3,
+        0.0
+       ],
+       "shear_mps": 0.0,
+       "current_modulation": 0.0,
+       "current_period_seconds": 7200.0,
+       "windage": 0.02,
+       "wind_stages": [
+        [
+         0,
+         5.0,
+         -5.0
+        ],
+        [
+         25,
+         -5.0,
+         5.0
+        ],
+        [
+         50,
+         5.0,
+         0.0
+        ],
+        [
+         75,
+         0.0,
+         0.0
+        ]
+       ],
+       "residual_mps": 0.05,
+       "anchor_radius_m": 100.0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "module": "analysis",
+   "cell": "area1000_v2.0_n120",
+   "groups": [
+    {
+     "seeds": [
+      31740,
+      31749
+     ],
+     "overrides": {
+      "tasks": 90,
+      "uavs": 6,
+      "maritime": {
+       "area_m": 1000.0,
+       "dt_seconds": 25.0,
+       "current_mps": [
+        0.3,
+        0.0
+       ],
+       "shear_mps": 0.0,
+       "current_modulation": 0.0,
+       "current_period_seconds": 7200.0,
+       "windage": 0.02,
+       "wind_stages": [
+        [
+         0,
+         5.0,
+         -5.0
+        ],
+        [
+         25,
+         -5.0,
+         5.0
+        ],
+        [
+         50,
+         5.0,
+         0.0
+        ],
+        [
+         75,
+         0.0,
+         0.0
+        ]
+       ],
+       "residual_mps": 0.05,
+       "anchor_radius_m": 100.0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "module": "analysis",
+   "cell": "area1000_v2.0_n180",
+   "groups": [
+    {
+     "seeds": [
+      31750,
+      31759
+     ],
+     "overrides": {
+      "tasks": 150,
+      "uavs": 6,
+      "maritime": {
+       "area_m": 1000.0,
+       "dt_seconds": 25.0,
+       "current_mps": [
+        0.3,
+        0.0
+       ],
+       "shear_mps": 0.0,
+       "current_modulation": 0.0,
+       "current_period_seconds": 7200.0,
+       "windage": 0.02,
+       "wind_stages": [
+        [
+         0,
+         5.0,
+         -5.0
+        ],
+        [
+         25,
+         -5.0,
+         5.0
+        ],
+        [
+         50,
+         5.0,
+         0.0
+        ],
+        [
+         75,
+         0.0,
+         0.0
+        ]
+       ],
+       "residual_mps": 0.05,
+       "anchor_radius_m": 100.0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "module": "analysis",
+   "cell": "area1000_v20.0_n80",
+   "groups": [
+    {
+     "seeds": [
+      31760,
+      31769
+     ],
+     "overrides": {
+      "uavs": 6,
+      "speed": 0.5,
+      "maritime": {
+       "area_m": 1000.0,
+       "dt_seconds": 25.0,
+       "current_mps": [
+        0.3,
+        0.0
+       ],
+       "shear_mps": 0.0,
+       "current_modulation": 0.0,
+       "current_period_seconds": 7200.0,
+       "windage": 0.02,
+       "wind_stages": [
+        [
+         0,
+         5.0,
+         -5.0
+        ],
+        [
+         25,
+         -5.0,
+         5.0
+        ],
+        [
+         50,
+         5.0,
+         0.0
+        ],
+        [
+         75,
+         0.0,
+         0.0
+        ]
+       ],
+       "residual_mps": 0.05,
+       "anchor_radius_m": 100.0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "module": "analysis",
+   "cell": "area1000_v20.0_n120",
+   "groups": [
+    {
+     "seeds": [
+      31770,
+      31779
+     ],
+     "overrides": {
+      "tasks": 90,
+      "uavs": 6,
+      "speed": 0.5,
+      "maritime": {
+       "area_m": 1000.0,
+       "dt_seconds": 25.0,
+       "current_mps": [
+        0.3,
+        0.0
+       ],
+       "shear_mps": 0.0,
+       "current_modulation": 0.0,
+       "current_period_seconds": 7200.0,
+       "windage": 0.02,
+       "wind_stages": [
+        [
+         0,
+         5.0,
+         -5.0
+        ],
+        [
+         25,
+         -5.0,
+         5.0
+        ],
+        [
+         50,
+         5.0,
+         0.0
+        ],
+        [
+         75,
+         0.0,
+         0.0
+        ]
+       ],
+       "residual_mps": 0.05,
+       "anchor_radius_m": 100.0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "module": "analysis",
+   "cell": "area1000_v20.0_n180",
+   "groups": [
+    {
+     "seeds": [
+      31780,
+      31789
+     ],
+     "overrides": {
+      "tasks": 150,
+      "uavs": 6,
+      "speed": 0.5,
+      "maritime": {
+       "area_m": 1000.0,
+       "dt_seconds": 25.0,
+       "current_mps": [
+        0.3,
+        0.0
+       ],
+       "shear_mps": 0.0,
+       "current_modulation": 0.0,
+       "current_period_seconds": 7200.0,
+       "windage": 0.02,
+       "wind_stages": [
+        [
+         0,
+         5.0,
+         -5.0
+        ],
+        [
+         25,
+         -5.0,
+         5.0
+        ],
+        [
+         50,
+         5.0,
+         0.0
+        ],
+        [
+         75,
+         0.0,
+         0.0
+        ]
+       ],
+       "residual_mps": 0.05,
+       "anchor_radius_m": 100.0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "module": "analysis",
+   "cell": "area10000_v0.6_n80",
+   "groups": [
+    {
+     "seeds": [
+      31790,
+      31799
+     ],
+     "overrides": {
+      "uavs": 6,
+      "speed": 0.0015
+     }
+    }
+   ]
+  },
+  {
+   "module": "analysis",
+   "cell": "area10000_v0.6_n120",
+   "groups": [
+    {
+     "seeds": [
+      31800,
+      31809
+     ],
+     "overrides": {
+      "tasks": 90,
+      "uavs": 6,
+      "speed": 0.0015
+     }
+    }
+   ]
+  },
+  {
+   "module": "analysis",
+   "cell": "area10000_v0.6_n180",
+   "groups": [
+    {
+     "seeds": [
+      31810,
+      31819
+     ],
+     "overrides": {
+      "tasks": 150,
+      "uavs": 6,
+      "speed": 0.0015
+     }
+    }
+   ]
+  },
+  {
+   "module": "analysis",
+   "cell": "area10000_v2.0_n80",
+   "groups": [
+    {
+     "seeds": [
+      31820,
+      31829
+     ],
+     "overrides": {
+      "uavs": 6,
+      "speed": 0.005
+     }
+    }
+   ]
+  },
+  {
+   "module": "analysis",
+   "cell": "area10000_v2.0_n120",
+   "groups": [
+    {
+     "seeds": [
+      31830,
+      31839
+     ],
+     "overrides": {
+      "tasks": 90,
+      "uavs": 6,
+      "speed": 0.005
+     }
+    }
+   ]
+  },
+  {
+   "module": "analysis",
+   "cell": "area10000_v2.0_n180",
+   "groups": [
+    {
+     "seeds": [
+      31840,
+      31849
+     ],
+     "overrides": {
+      "tasks": 150,
+      "uavs": 6,
+      "speed": 0.005
+     }
+    }
+   ]
+  },
+  {
+   "module": "analysis",
+   "cell": "area10000_v20.0_n80",
+   "groups": [
+    {
+     "seeds": [
+      31850,
+      31859
+     ],
+     "overrides": {
+      "uavs": 6
+     }
+    }
+   ]
+  },
+  {
+   "module": "analysis",
+   "cell": "area10000_v20.0_n120",
+   "groups": [
+    {
+     "seeds": [
+      31860,
+      31869
+     ],
+     "overrides": {
+      "tasks": 90,
+      "uavs": 6
+     }
+    }
+   ]
+  },
+  {
+   "module": "analysis",
+   "cell": "area10000_v20.0_n180",
+   "groups": [
+    {
+     "seeds": [
+      31870,
+      31879
+     ],
+     "overrides": {
+      "tasks": 150,
+      "uavs": 6
+     }
+    }
+   ]
+  },
+  {
+   "module": "main",
+   "cell": "u4_n80_medium",
+   "groups": [
+    {
+     "seeds": [
+      40000,
+      40029
+     ],
+     "overrides": {}
+    }
+   ]
+  },
+  {
+   "module": "main",
+   "cell": "u4_n80_high",
+   "groups": [
+    {
+     "seeds": [
+      40030,
+      40059
+     ],
+     "overrides": {
+      "tasks": 20,
+      "arrival": "high"
+     }
+    }
+   ]
+  },
+  {
+   "module": "main",
+   "cell": "u4_n120_medium",
+   "groups": [
+    {
+     "seeds": [
+      40060,
+      40089
+     ],
+     "overrides": {
+      "tasks": 90
+     }
+    }
+   ]
+  },
+  {
+   "module": "main",
+   "cell": "u4_n120_high",
+   "groups": [
+    {
+     "seeds": [
+      40090,
+      40119
+     ],
+     "overrides": {
+      "tasks": 60,
+      "arrival": "high"
+     }
+    }
+   ]
+  },
+  {
+   "module": "main",
+   "cell": "u4_n180_medium",
+   "groups": [
+    {
+     "seeds": [
+      40120,
+      40149
+     ],
+     "overrides": {
+      "tasks": 150
+     }
+    }
+   ]
+  },
+  {
+   "module": "main",
+   "cell": "u4_n180_high",
+   "groups": [
+    {
+     "seeds": [
+      40150,
+      40179
+     ],
+     "overrides": {
+      "tasks": 120,
+      "arrival": "high"
+     }
+    }
+   ]
+  },
+  {
+   "module": "main",
+   "cell": "u6_n80_medium",
+   "groups": [
+    {
+     "seeds": [
+      40180,
+      40209
+     ],
+     "overrides": {
+      "uavs": 6
+     }
+    }
+   ]
+  },
+  {
+   "module": "main",
+   "cell": "u6_n80_high",
+   "groups": [
+    {
+     "seeds": [
+      40210,
+      40239
+     ],
+     "overrides": {
+      "tasks": 20,
+      "uavs": 6,
+      "arrival": "high"
+     }
+    }
+   ]
+  },
+  {
+   "module": "main",
+   "cell": "u6_n120_medium",
+   "groups": [
+    {
+     "seeds": [
+      40240,
+      40269
+     ],
+     "overrides": {
+      "tasks": 90,
+      "uavs": 6
+     }
+    }
+   ]
+  },
+  {
+   "module": "main",
+   "cell": "u6_n120_high",
+   "groups": [
+    {
+     "seeds": [
+      40270,
+      40299
+     ],
+     "overrides": {
+      "tasks": 60,
+      "uavs": 6,
+      "arrival": "high"
+     }
+    }
+   ]
+  },
+  {
+   "module": "main",
+   "cell": "u6_n180_medium",
+   "groups": [
+    {
+     "seeds": [
+      40300,
+      40329
+     ],
+     "overrides": {
+      "tasks": 150,
+      "uavs": 6
+     }
+    }
+   ]
+  },
+  {
+   "module": "main",
+   "cell": "u6_n180_high",
+   "groups": [
+    {
+     "seeds": [
+      40330,
+      40359
+     ],
+     "overrides": {
+      "tasks": 120,
+      "uavs": 6,
+      "arrival": "high"
+     }
+    }
+   ]
+  },
+  {
+   "module": "robustness",
+   "cell": "maritime-wind_u4",
+   "groups": [
+    {
+     "seeds": [
+      40360,
+      40389
+     ],
+     "overrides": {
+      "tasks": 60,
+      "arrival": "high",
+      "mobility": "maritime-wind"
+     }
+    }
+   ]
+  },
+  {
+   "module": "robustness",
+   "cell": "maritime-wind_u6",
+   "groups": [
+    {
+     "seeds": [
+      40390,
+      40419
+     ],
+     "overrides": {
+      "tasks": 60,
+      "uavs": 6,
+      "arrival": "high",
+      "mobility": "maritime-wind"
+     }
+    }
+   ]
+  },
+  {
+   "module": "robustness",
+   "cell": "maritime-anchored_u4",
+   "groups": [
+    {
+     "seeds": [
+      40420,
+      40449
+     ],
+     "overrides": {
+      "tasks": 60,
+      "arrival": "high",
+      "mobility": "maritime-anchored"
+     }
+    }
+   ]
+  },
+  {
+   "module": "robustness",
+   "cell": "maritime-anchored_u6",
+   "groups": [
+    {
+     "seeds": [
+      40450,
+      40479
+     ],
+     "overrides": {
+      "tasks": 60,
+      "uavs": 6,
+      "arrival": "high",
+      "mobility": "maritime-anchored"
+     }
+    }
+   ]
+  },
+  {
+   "module": "robustness",
+   "cell": "hycom_u4",
+   "groups": [
+    {
+     "seeds": [
+      40480,
+      40489
+     ],
+     "overrides": {
+      "tasks": 60,
+      "arrival": "high",
+      "mobility": "real-current",
+      "maritime": null,
+      "real_drift": {
+       "file": "hycom_02a3556f371dfcec.nc",
+       "sha256": "676c884f9b7919301a93b51a992aca42921ab3dfabeb6199f9bebfa09ef31342",
+       "center_lat": 26.0,
+       "center_lon": -68.0,
+       "start_utc": "2023-01-01T00:00:00Z",
+       "area_m": 10000.0,
+       "dt_seconds": 25.0
+      }
+     }
+    },
+    {
+     "seeds": [
+      40490,
+      40499
+     ],
+     "overrides": {
+      "tasks": 60,
+      "arrival": "high",
+      "mobility": "real-current",
+      "maritime": null,
+      "real_drift": {
+       "file": "hycom_ffdba82a279d2cea.nc",
+       "sha256": "25d01dca0c6fd267818bc2fefc39f8494dfd803f675619930326ff0ea4aac014",
+       "center_lat": 26.0,
+       "center_lon": -68.0,
+       "start_utc": "2023-07-01T00:00:00Z",
+       "area_m": 10000.0,
+       "dt_seconds": 25.0
+      }
+     }
+    },
+    {
+     "seeds": [
+      40500,
+      40509
+     ],
+     "overrides": {
+      "tasks": 60,
+      "arrival": "high",
+      "mobility": "real-current",
+      "maritime": null,
+      "real_drift": {
+       "file": "hycom_3bf6c184761a3349.nc",
+       "sha256": "32131ef546711ce8bd1dc699e00252baac2ee0ee5c913540c7fa07228a87da72",
+       "center_lat": 30.0,
+       "center_lon": -60.0,
+       "start_utc": "2023-01-01T00:00:00Z",
+       "area_m": 10000.0,
+       "dt_seconds": 25.0
+      }
+     }
+    },
+    {
+     "seeds": [
+      40510,
+      40519
+     ],
+     "overrides": {
+      "tasks": 60,
+      "arrival": "high",
+      "mobility": "real-current",
+      "maritime": null,
+      "real_drift": {
+       "file": "hycom_6d210b091966c664.nc",
+       "sha256": "b25f47d7afd8c5b6371906c9140a209f56123b049c61d07c5aa8be8b4c34d39b",
+       "center_lat": 30.0,
+       "center_lon": -60.0,
+       "start_utc": "2023-07-01T00:00:00Z",
+       "area_m": 10000.0,
+       "dt_seconds": 25.0
+      }
+     }
+    },
+    {
+     "seeds": [
+      40520,
+      40529
+     ],
+     "overrides": {
+      "tasks": 60,
+      "arrival": "high",
+      "mobility": "real-current",
+      "maritime": null,
+      "real_drift": {
+       "file": "hycom_498ffaa5b52f3e74.nc",
+       "sha256": "fabd99a5bce96cca2a2f84815c1da176114fb052666a943406ecfab31522a0fd",
+       "center_lat": 35.0,
+       "center_lon": -50.0,
+       "start_utc": "2023-01-01T00:00:00Z",
+       "area_m": 10000.0,
+       "dt_seconds": 25.0
+      }
+     }
+    },
+    {
+     "seeds": [
+      40530,
+      40539
+     ],
+     "overrides": {
+      "tasks": 60,
+      "arrival": "high",
+      "mobility": "real-current",
+      "maritime": null,
+      "real_drift": {
+       "file": "hycom_ff829888b221d694.nc",
+       "sha256": "d9356c6c37ce3dd42ca60a04d69bf20e523a559426809346ebd6c71f49bedd91",
+       "center_lat": 35.0,
+       "center_lon": -50.0,
+       "start_utc": "2023-07-01T00:00:00Z",
+       "area_m": 10000.0,
+       "dt_seconds": 25.0
+      }
+     }
+    }
+   ]
+  },
+  {
+   "module": "robustness",
+   "cell": "hycom_u6",
+   "groups": [
+    {
+     "seeds": [
+      40540,
+      40549
+     ],
+     "overrides": {
+      "tasks": 60,
+      "uavs": 6,
+      "arrival": "high",
+      "mobility": "real-current",
+      "maritime": null,
+      "real_drift": {
+       "file": "hycom_02a3556f371dfcec.nc",
+       "sha256": "676c884f9b7919301a93b51a992aca42921ab3dfabeb6199f9bebfa09ef31342",
+       "center_lat": 26.0,
+       "center_lon": -68.0,
+       "start_utc": "2023-01-01T00:00:00Z",
+       "area_m": 10000.0,
+       "dt_seconds": 25.0
+      }
+     }
+    },
+    {
+     "seeds": [
+      40550,
+      40559
+     ],
+     "overrides": {
+      "tasks": 60,
+      "uavs": 6,
+      "arrival": "high",
+      "mobility": "real-current",
+      "maritime": null,
+      "real_drift": {
+       "file": "hycom_ffdba82a279d2cea.nc",
+       "sha256": "25d01dca0c6fd267818bc2fefc39f8494dfd803f675619930326ff0ea4aac014",
+       "center_lat": 26.0,
+       "center_lon": -68.0,
+       "start_utc": "2023-07-01T00:00:00Z",
+       "area_m": 10000.0,
+       "dt_seconds": 25.0
+      }
+     }
+    },
+    {
+     "seeds": [
+      40560,
+      40569
+     ],
+     "overrides": {
+      "tasks": 60,
+      "uavs": 6,
+      "arrival": "high",
+      "mobility": "real-current",
+      "maritime": null,
+      "real_drift": {
+       "file": "hycom_3bf6c184761a3349.nc",
+       "sha256": "32131ef546711ce8bd1dc699e00252baac2ee0ee5c913540c7fa07228a87da72",
+       "center_lat": 30.0,
+       "center_lon": -60.0,
+       "start_utc": "2023-01-01T00:00:00Z",
+       "area_m": 10000.0,
+       "dt_seconds": 25.0
+      }
+     }
+    },
+    {
+     "seeds": [
+      40570,
+      40579
+     ],
+     "overrides": {
+      "tasks": 60,
+      "uavs": 6,
+      "arrival": "high",
+      "mobility": "real-current",
+      "maritime": null,
+      "real_drift": {
+       "file": "hycom_6d210b091966c664.nc",
+       "sha256": "b25f47d7afd8c5b6371906c9140a209f56123b049c61d07c5aa8be8b4c34d39b",
+       "center_lat": 30.0,
+       "center_lon": -60.0,
+       "start_utc": "2023-07-01T00:00:00Z",
+       "area_m": 10000.0,
+       "dt_seconds": 25.0
+      }
+     }
+    },
+    {
+     "seeds": [
+      40580,
+      40589
+     ],
+     "overrides": {
+      "tasks": 60,
+      "uavs": 6,
+      "arrival": "high",
+      "mobility": "real-current",
+      "maritime": null,
+      "real_drift": {
+       "file": "hycom_498ffaa5b52f3e74.nc",
+       "sha256": "fabd99a5bce96cca2a2f84815c1da176114fb052666a943406ecfab31522a0fd",
+       "center_lat": 35.0,
+       "center_lon": -50.0,
+       "start_utc": "2023-01-01T00:00:00Z",
+       "area_m": 10000.0,
+       "dt_seconds": 25.0
+      }
+     }
+    },
+    {
+     "seeds": [
+      40590,
+      40599
+     ],
+     "overrides": {
+      "tasks": 60,
+      "uavs": 6,
+      "arrival": "high",
+      "mobility": "real-current",
+      "maritime": null,
+      "real_drift": {
+       "file": "hycom_ff829888b221d694.nc",
+       "sha256": "d9356c6c37ce3dd42ca60a04d69bf20e523a559426809346ebd6c71f49bedd91",
+       "center_lat": 35.0,
+       "center_lon": -50.0,
+       "start_utc": "2023-07-01T00:00:00Z",
+       "area_m": 10000.0,
+       "dt_seconds": 25.0
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

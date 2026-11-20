@@ -1,0 +1,51 @@
+{
+ "schema_version": "1.2",
+ "protocol": "p5_protocol_v1_2.md",
+ "frozen": "2026-11-12",
+ "amends": {
+  "v1_1_plan": "f1be5d8d2a48fe3ee873567317bb4b2b766006f1f18e1f8de9ce6cdfe2eea402"
+ },
+ "seeds": {
+  "used": [
+   40600,
+   40959
+  ],
+  "sealed_unused": [
+   40960,
+   40999
+  ],
+  "per_cell": 30,
+  "cell_order": "v1.1 main.cells"
+ },
+ "arms": [
+  "pr",
+  "snap",
+  "pr_d1",
+  "snap_d1a"
+ ],
+ "confirmatory": {
+  "H1": "snap - pr",
+  "H2": "snap_d1a - pr_d1",
+  "endpoint": "TCR",
+  "holm_alpha": 0.05,
+  "bootstrap": {
+   "kind": "cell-stratified paired, equal cell weights",
+   "replicates": 50000,
+   "rng": "PCG64",
+   "seed": 20261112,
+   "p": "centred two-sided"
+  }
+ },
+ "descriptive_bootstrap": {
+  "replicates": 10000,
+  "seed": 20261112
+ },
+ "budget_seconds": 25.0,
+ "code": {
+  "runner": "b4130e60d6444a6a9bdeb7eb172ae1ed2ad33e406954cf34f7fbea6a5623b65f",
+  "r2_r3_extra": "74c9565791fa8d16a175eda70e8380e5fc8b30dbbbe321b401d2cf745e2b6eb9",
+  "planner_release": "09ee2cb",
+  "planner_dhgc_tree": "1635ad37634187386836fd5e3e7d9ce0da545a332380596e5200022030cf7baa"
+ },
+ "protocol_sha256": "99392b5660a01183ba43cb6095103ff8e759660e7653e4dbc3fb41ac42c20f7c"
+}
