@@ -2,8 +2,7 @@
 
 Code and result records for the paper
 
-> *Counterfactual commitment revision for online
-> multi-UAV service of ocean-drifting buoys.* Manuscript submitted to Expert
+> *Adaptive commitment revision based on anchored rollout for dynamic multi-UAV task allocation in ocean-drifting buoy service.* Manuscript submitted to Expert
 > Systems with Applications.
 
 The method was called DA-CBBA in earlier drafts; the code keeps `da-cbba` as an
