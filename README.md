@@ -2,7 +2,7 @@
 
 Code and result records for the paper
 
-> X. Du, Y. Cheng, L. Yin, F. Li. *Counterfactual commitment revision for online
+> *Counterfactual commitment revision for online
 > multi-UAV service of ocean-drifting buoys.* Manuscript submitted to Expert
 > Systems with Applications.
 
